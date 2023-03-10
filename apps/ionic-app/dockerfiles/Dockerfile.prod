@@ -1,0 +1,24 @@
+######## STAGE 1: Build
+FROM node:18-alpine3.15 as builder
+
+WORKDIR /app
+
+COPY package.json yarn.lock ./
+
+RUN apk add --update python3 make g++ \
+    && rm -rf /var/cache/apk/*
+
+RUN yarn --prod
+
+COPY . .
+
+RUN npx nx build ionic-app
+
+######## Stage 2: Run
+FROM nginx as server
+
+ARG CONFIGURATION=prod
+
+RUN rm -rf /usr/share/nginx/html/*
+COPY --from=builder /app/dist/apps/ionic-app /usr/share/nginx/html
+COPY ./apps/ionic-app/reverse_proxy/nginx.${CONFIGURATION}.conf /etc/nginx/nginx.conf

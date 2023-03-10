@@ -65,7 +65,8 @@
           "browserTarget": "ionic-app:build:production"
         },
         "development": {
-          "browserTarget": "ionic-app:build:development"
+          "browserTarget": "ionic-app:build:development",
+          "proxyConfig": "./proxy.config.json"
         }
       },
       "defaultConfiguration": "development"
