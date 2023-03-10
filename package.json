@@ -3,12 +3,13 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "start:dev:up": "docker compose -f apps/ionic-app/docker-compose.dev.yml up",
-    "start:dev:up:build": "docker compose -f apps/ionic-app/docker-compose.dev.yml up --build",
-    "start:dev:down": "docker compose -f apps/ionic-app/docker-compose.dev.yml down",
-    "start:stag:up": "docker compose -f apps/ionic-app/docker-compose.stag.yml up",
-    "start:stag:up:build": "docker compose -f apps/ionic-app/docker-compose.stag.yml up --build",
-    "start:stag:down": "docker compose -f apps/ionic-app/docker-compose.stag.yml down"},
+    "ionic-app:dev:up": "docker compose -f apps/ionic-app/docker-compose.dev.yml up",
+    "ionic-app:dev:down": "docker compose -f apps/ionic-app/docker-compose.dev.yml down",
+    "ionic-app:stag:up": "docker compose -f apps/ionic-app/docker-compose.stag.yml up",
+    "ionic-app:stag:down": "docker compose -f apps/ionic-app/docker-compose.stag.yml down",
+    "test": "jest",
+    "prune-docker": "docker system prune -fa && docker volume prune -f" 
+  },
   "private": true,
   "dependencies": {
     "@angular/animations": "~15.2.0",
