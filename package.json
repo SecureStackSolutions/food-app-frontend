@@ -8,7 +8,7 @@
     "ionic-app:stag:up": "docker compose -f apps/ionic-app/docker-compose.stag.yml up",
     "ionic-app:stag:down": "docker compose -f apps/ionic-app/docker-compose.stag.yml down",
     "test": "jest",
-    "prune-docker": "docker system prune -fa && docker volume prune -f" 
+    "prune-docker": "docker system prune -fa && docker volume prune -f"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +22,7 @@
     "@angular/router": "~15.2.0",
     "@capacitor/core": "^3.6.0",
     "@ionic/angular": "^6.1.4",
+    "@ngxs/store": "^3.7.6",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.12.0"
