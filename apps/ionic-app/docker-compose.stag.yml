@@ -1,20 +1,20 @@
 version: '3.9'
 services:
-  mocking:
-    container_name: mock
-    image: securestacksolutions/wiremock
-    ports:
-      - "8080"
-    volumes:
-      - ./src/app/libs/mocks:/mocks
-  ionic-app:
-    container_name: app
-    build:
-      context: ../../
-      dockerfile: ./apps/ionic-app/dockerfiles/Dockerfile.prod
-      args:
-        - CONFIGURATION=stag
-    ports:
-      - 8201:4200
-    depends_on:
-      - mocking
+    mocking:
+        container_name: mock
+        image: securestacksolutions/wiremock
+        ports:
+            - '8080'
+        volumes:
+            - ./src/app/libs/mocks:/mocks
+    ionic-app:
+        container_name: app
+        build:
+            context: ../../
+            dockerfile: ./apps/ionic-app/dockerfiles/Dockerfile.prod
+            args:
+                - CONFIGURATION=stag
+        ports:
+            - 8201:4200
+        depends_on:
+            - mocking
