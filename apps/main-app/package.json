@@ -1,5 +1,5 @@
 {
-   "name": "ionic-app",
+   "name": "main-app",
    "devDependencies": {
       "@capacitor/cli": "^3.6.0"
    }

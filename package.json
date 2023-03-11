@@ -3,10 +3,10 @@
    "version": "0.0.0",
    "license": "MIT",
    "scripts": {
-      "ionic-app:dev:up": "docker compose -f apps/ionic-app/docker-compose.dev.yml up",
-      "ionic-app:dev:down": "docker compose -f apps/ionic-app/docker-compose.dev.yml down",
-      "ionic-app:stag:up": "docker compose -f apps/ionic-app/docker-compose.stag.yml up",
-      "ionic-app:stag:down": "docker compose -f apps/ionic-app/docker-compose.stag.yml down",
+      "main-app:dev:start": "docker compose -f apps/main-app/docker-compose.dev.yml up",
+      "main-app:dev:stop": "docker compose -f apps/main-app/docker-compose.dev.yml down",
+      "main-app:stag:start": "docker compose -f apps/main-app/docker-compose.stag.yml up",
+      "main-app:stag:stop": "docker compose -f apps/main-app/docker-compose.stag.yml down",
       "test": "jest",
       "prune-docker": "docker system prune -fa && docker volume prune -f"
    },

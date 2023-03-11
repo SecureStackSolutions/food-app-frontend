@@ -12,7 +12,7 @@ RUN yarn --prod
 
 COPY . .
 
-RUN npx nx build ionic-app
+RUN npx nx build main-app
 
 ######## Stage 2: Run
 FROM nginx as server
@@ -20,5 +20,5 @@ FROM nginx as server
 ARG CONFIGURATION=prod
 
 RUN rm -rf /usr/share/nginx/html/*
-COPY --from=builder /app/dist/apps/ionic-app /usr/share/nginx/html
-COPY ./apps/ionic-app/reverse_proxy/nginx.${CONFIGURATION}.conf /etc/nginx/nginx.conf
+COPY --from=builder /app/dist/apps/main-app /usr/share/nginx/html
+COPY ./apps/main-app/reverse_proxy/nginx.${CONFIGURATION}.conf /etc/nginx/nginx.conf

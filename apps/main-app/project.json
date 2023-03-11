@@ -1,22 +1,22 @@
 {
-   "name": "ionic-app",
+   "name": "main-app",
    "$schema": "../node_modules/nx/schemas/project-schema.json",
    "projectType": "application",
-   "sourceRoot": "apps/ionic-app/src",
+   "sourceRoot": "apps/main-app/src",
    "prefix": "nx-ionic-template",
    "targets": {
       "build": {
          "executor": "@angular-devkit/build-angular:browser",
          "outputs": ["{options.outputPath}"],
          "options": {
-            "outputPath": "dist/apps/ionic-app",
-            "index": "apps/ionic-app/src/index.html",
-            "main": "apps/ionic-app/src/main.ts",
+            "outputPath": "dist/apps/main-app",
+            "index": "apps/main-app/src/index.html",
+            "main": "apps/main-app/src/main.ts",
             "polyfills": ["zone.js"],
-            "tsConfig": "apps/ionic-app/tsconfig.app.json",
+            "tsConfig": "apps/main-app/tsconfig.app.json",
             "inlineStyleLanguage": "scss",
             "assets": [
-               "apps/ionic-app/src/assets",
+               "apps/main-app/src/assets",
                {
                   "glob": "**/*.svg",
                   "input": "node_modules/ionicons/dist/ionicons/svg",
@@ -24,9 +24,9 @@
                }
             ],
             "styles": [
-               "apps/ionic-app/src/styles.scss",
+               "apps/main-app/src/styles.scss",
                {
-                  "input": "apps/ionic-app/src/theme/variables.scss"
+                  "input": "apps/main-app/src/theme/variables.scss"
                }
             ],
             "scripts": []
@@ -62,10 +62,10 @@
          "executor": "@angular-devkit/build-angular:dev-server",
          "configurations": {
             "production": {
-               "browserTarget": "ionic-app:build:production"
+               "browserTarget": "main-app:build:production"
             },
             "development": {
-               "browserTarget": "ionic-app:build:development",
+               "browserTarget": "main-app:build:development",
                "proxyConfig": "./proxy.config.json"
             }
          },
@@ -74,21 +74,21 @@
       "extract-i18n": {
          "executor": "@angular-devkit/build-angular:extract-i18n",
          "options": {
-            "browserTarget": "ionic-app:build"
+            "browserTarget": "main-app:build"
          }
       },
       "lint": {
          "executor": "@nrwl/linter:eslint",
          "outputs": ["{options.outputFile}"],
          "options": {
-            "lintFilePatterns": ["apps/ionic-app/**/*.ts", "apps/ionic-app/**/*.html"]
+            "lintFilePatterns": ["apps/main-app/**/*.ts", "apps/main-app/**/*.html"]
          }
       },
       "test": {
          "executor": "@nrwl/jest:jest",
          "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
          "options": {
-            "jestConfig": "apps/ionic-app/jest.config.ts",
+            "jestConfig": "apps/main-app/jest.config.ts",
             "passWithNoTests": true
          },
          "configurations": {

@@ -1,9 +1,9 @@
 /* eslint-disable */
 export default {
-   displayName: 'ionic-app',
+   displayName: 'main-app',
    preset: '../../jest.preset.js',
    setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
-   coverageDirectory: '../../coverage/apps/ionic-app',
+   coverageDirectory: '../../coverage/apps/main-app',
    transform: {
       '^.+\\.(ts|mjs|js|html)$': [
          'jest-preset-angular',
