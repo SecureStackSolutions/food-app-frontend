@@ -1,0 +1,4 @@
+:host {
+    @apply w-full h-full xs:h-5/6 xs:w-9/12 bg-white overflow-hidden px-8 py-16 flex flex-col items-center justify-between;
+    @apply xs:rounded-xl xs:max-w-md xs:absolute xs:top-1/2 xs:left-1/2 xs:-translate-x-1/2 xs:-translate-y-1/2;
+}

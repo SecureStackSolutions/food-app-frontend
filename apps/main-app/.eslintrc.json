@@ -24,7 +24,7 @@
             "@angular-eslint/component-class-suffix": [
                "error",
                {
-                  "suffixes": ["Page", "Component"]
+                  "suffixes": ["Page", "Component", "Feature"]
                }
             ],
             "@angular-eslint/no-empty-lifecycle-method": 0,
