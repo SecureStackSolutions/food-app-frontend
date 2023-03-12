@@ -6,11 +6,13 @@ const routes: Routes = [
    {
       path: '',
       component: ShoppingListsPage,
-   },
-   {
-      path: ':shoppingListId',
-      loadChildren: () =>
-         import('./shopping-list/shopping-list.module').then((m) => m.ShoppingListPageModule),
+      children: [
+         {
+            path: ':shoppingListId',
+            loadChildren: () =>
+               import('./shopping-list/shopping-list.module').then((m) => m.ShoppingListPageModule),
+         },
+      ],
    },
 ];
 

@@ -7,6 +7,7 @@ import { IonicModule, IonicRouteStrategy } from '@ionic/angular';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { NgxsModule } from '@ngxs/store';
+import { AuthenticationState } from './libs/authentication/authentication.state';
 
 @NgModule({
    declarations: [AppComponent],
@@ -15,7 +16,7 @@ import { NgxsModule } from '@ngxs/store';
       BrowserModule,
       IonicModule.forRoot(),
       AppRoutingModule,
-      NgxsModule.forRoot([], {
+      NgxsModule.forRoot([AuthenticationState], {
          developmentMode: isDevMode(),
       }),
    ],
