@@ -16,7 +16,7 @@ export interface AuthenticationStateModel {
 }
 
 const emptySession: UserSession = {
-   authToken: '1',
+   authToken: '',
 };
 
 export class SetAuthToken {

@@ -39,6 +39,7 @@
       "@capacitor/android": "^3.6.0",
       "@capacitor/cli": "^3.6.0",
       "@capacitor/ios": "^3.6.0",
+      "@ngxs/store": "3.7.6-dev.master-4d7e301",
       "@nrwl/angular": "15.8.5",
       "@nrwl/cypress": "15.8.5",
       "@nrwl/eslint-plugin-nx": "15.8.5",
@@ -66,6 +67,6 @@
       "ts-node": "10.9.1",
       "tslib": "^2.5.0",
       "typescript": "^4.9.5",
-      "@ngxs/store": "3.7.6-dev.master-4d7e301"
+      "@ngneat/spectator": "^14.0.0"
    }
 }
