@@ -1,0 +1,59 @@
+$unfocussed-color: rgb(184, 184, 184);
+$focussed-color: rgb(64, 124, 213);
+
+label {
+    padding-left: 12px;
+}
+ion-icon {
+    font-size: 22px;
+}
+
+input {
+    width: 100%;
+    padding-top: 12px;
+    padding-bottom: 14px;
+}
+
+.input-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 0 12px;
+}
+
+.input-border {
+    height: 2px;
+    transition: border 0.1s ease;
+}
+
+.focussed-color {
+    color:  $focussed-color;
+}
+
+.unfocussed-color {
+    color: black;
+}
+
+.warning-color {
+    color: $unfocussed-color;
+}
+
+.success-color {
+    color: $unfocussed-color;
+}
+
+.focussed-border {
+    border-bottom: 2px solid $focussed-color;
+}
+
+.unfocussed-border {
+    border-bottom: 1px solid $unfocussed-color;
+}
+
+.warning-border {
+    border-bottom: 2px solid $focussed-color;
+}
+
+.success-border {
+    border-bottom: 2px solid $focussed-color;
+}

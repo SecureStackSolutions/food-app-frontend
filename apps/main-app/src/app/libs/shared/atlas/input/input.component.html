@@ -1,0 +1,8 @@
+<ng-container *ngIf="data">
+    <label *ngIf="data.label as label" [ngClass]="state + '-color'">{{ label }}</label>
+    <div class="input-wrapper">
+        <ion-icon *ngIf="data.icon as icon" [name]="icon"></ion-icon>
+        <input [type]="data.type ?? 'text'" [placeholder]="data.placeholder" (hasFocus)="onFocusChange($event)" [(ngModel)]="text">
+    </div>
+    <div class="input-border" [ngClass]="state + '-border'"></div>
+</ng-container>

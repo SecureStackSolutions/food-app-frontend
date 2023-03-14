@@ -14,7 +14,7 @@ import { AuthenticationState } from './libs/authentication/authentication.state'
    entryComponents: [],
    imports: [
       BrowserModule,
-      IonicModule.forRoot(),
+      IonicModule.forRoot({ mode: 'md' }),
       AppRoutingModule,
       NgxsModule.forRoot([AuthenticationState], {
          developmentMode: isDevMode(),
