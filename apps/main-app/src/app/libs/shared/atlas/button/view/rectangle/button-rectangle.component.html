@@ -1,6 +1,6 @@
 <button *ngIf="data" [style.background]="backgroundColor" [style.color]="data.color?.textColor">
-    <ion-spinner *ngIf="loading; else notLoading" name="crescent"></ion-spinner>
-    <ng-template #notLoading>
+    <ion-spinner *ngIf="isLoading; else isNotLoading" name="crescent"></ion-spinner>
+    <ng-template #isNotLoading>
         <ion-icon *ngIf="data.icon as icon" [name]="icon"></ion-icon>
         <span *ngIf="data.text">{{ data.text }}</span>
     </ng-template>

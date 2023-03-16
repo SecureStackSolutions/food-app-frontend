@@ -5,10 +5,10 @@
     <h1 class="text-3xl font-semibold text-slate-900">GoGrocery</h1>
 </div>
 <div id="login-providers">
-    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'mail-outline', text: 'Continue with Email'}"></atlas-button>
-    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-google', text: 'Continue with Google', color: { bgColor: ['#f54233'], textColor: 'white'}}"></atlas-button>
-    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-apple', text: 'Continue with Apple', color: { bgColor: ['#000000'], textColor: 'white'}}"></atlas-button>
-    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-facebook', text: 'Continue with Facebook', color: { bgColor: ['#277fb9', '#40a4ea'], textColor: 'white'}}"></atlas-button>
+    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'mail-outline', text: 'Continue with Email'}" (click)="authenticate(AuthProvider.Google)"></atlas-button>
+    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-google', text: 'Continue with Google', color: { bgColor: ['#f54233'], textColor: 'white'}}" (click)="authenticate(AuthProvider.Google)"></atlas-button>
+    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-apple', text: 'Continue with Apple', color: { bgColor: ['#000000'], textColor: 'white'}}" (click)="authenticate(AuthProvider.Google)"></atlas-button>
+    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-facebook', text: 'Continue with Facebook', color: { bgColor: ['#277fb9', '#40a4ea'], textColor: 'white'}}" (click)="authenticate(AuthProvider.Facebook)"></atlas-button>
 </div>
 
 

@@ -11,7 +11,7 @@ h1 {
 }
 
 #welcome-tour {
-    @apply md:bg-teal-400;
+    @apply bg-teal-400;
     @apply h-full row-start-2 row-end-4 flex justify-center items-center;
     @apply md:row-span-5 md:col-span-3;
 }
@@ -22,6 +22,6 @@ h1 {
 }
 
 #login-providers {
-    @apply h-full row-start-4 row-end-6 flex flex-col gap-y-5 justify-center px-8 pb-10;
+    @apply h-full row-start-4 row-end-6 flex flex-col gap-y-5 justify-end px-8 pb-10;
     @apply md:row-span-3 md:col-span-3;
 }

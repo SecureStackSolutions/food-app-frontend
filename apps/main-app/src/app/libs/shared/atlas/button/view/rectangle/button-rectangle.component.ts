@@ -1,7 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { IonicModule } from '@ionic/angular';
-import { OnInit } from '@angular/core';
 
 @Component({
    selector: 'atlas-button-rectangle',
@@ -16,13 +15,12 @@ export class AtlasButtonRectangleComponent implements OnInit {
       text?: string;
       color?: { textColor?: string; bgColor?: string[] };
    };
-   @Input() loading = false;
+   @Input() isLoading = false;
 
    backgroundColor: string;
 
    ngOnInit() {
       this.backgroundColor = this.getBackgroundColor(this.data.color?.bgColor);
-      console.log(this.backgroundColor);
    }
 
    getBackgroundColor(colors: string[] | undefined): string {
