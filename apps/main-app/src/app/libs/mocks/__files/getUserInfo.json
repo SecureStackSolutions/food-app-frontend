@@ -1,0 +1,11 @@
+{ 
+    "profile": {
+        "name": "Lucas",
+        "email": "securestacksolutions",
+        "picture": "<picture url>"
+    },
+    "preferences": {
+        "language": "en",
+        "theme": "light"
+    }
+}

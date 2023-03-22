@@ -9,31 +9,38 @@ import {
 } from '@angular/router';
 import { Select } from '@ngxs/store';
 import { map, Observable } from 'rxjs';
-import { AuthenticationState } from './authentication.state';
+import { UserState } from '../state-management/user/user.state';
 
 type CanActivate = () => Observable<boolean | UrlTree>;
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationGuardService {
-   @Select(AuthenticationState.userIsAuthenticated)
-   userIsAuthenticated$!: Observable<boolean>;
+   @Select(UserState.isAuthenticated) isAuthenticated$: Observable<boolean>;
 
    constructor(private readonly router: Router) {}
 
-   canActivate: CanActivate = () =>
-      this.userIsAuthenticated$.pipe(
-         map((userIsAuthenticated) =>
-            userIsAuthenticated ? true : this.router.parseUrl('/authenticate')
-         )
+   canActivateApp: CanActivate = () =>
+      this.isAuthenticated$.pipe(
+         map((isAuthenticated) => isAuthenticated || this.router.parseUrl('/authenticate'))
+      );
+
+   canActivateAuthPage: CanActivate = () =>
+      this.isAuthenticated$.pipe(
+         map((isAuthenticated) => !isAuthenticated || this.router.parseUrl('/app'))
       );
 }
 
-export const authenticationRootGuard: CanActivateFn = (
+export const AuthPageGuard: CanActivateFn = (
    _route: ActivatedRouteSnapshot,
    _state: RouterStateSnapshot
-) => inject(AuthenticationGuardService).canActivate();
+) => inject(AuthenticationGuardService).canActivateAuthPage();
 
-export const authenticationChildGuard: CanActivateChildFn = (
+export const AppChildGuard: CanActivateChildFn = (
    _route: ActivatedRouteSnapshot,
    _state: RouterStateSnapshot
-) => inject(AuthenticationGuardService).canActivate();
+) => inject(AuthenticationGuardService).canActivateApp();
+
+export const AppRootGuard: CanActivateFn = (
+   _route: ActivatedRouteSnapshot,
+   _state: RouterStateSnapshot
+) => inject(AuthenticationGuardService).canActivateApp();

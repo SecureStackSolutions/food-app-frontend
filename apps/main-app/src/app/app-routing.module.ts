@@ -1,34 +1,11 @@
-import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { PreloadAllModules, RouterModule, Routes } from '@angular/router';
-import { authenticationChildGuard } from './libs/authentication/authentication.guard';
-import { AuthenticationInterceptor } from './libs/authentication/authentication.interceptor';
 
 const routes: Routes = [
    {
-      path: '',
-      canActivateChild: [authenticationChildGuard],
-      children: [
-         {
-            path: '',
-            redirectTo: 'shopping-list',
-            pathMatch: 'full',
-         },
-         {
-            path: 'shopping-list',
-            loadChildren: () =>
-               import('./libs/pages/shopping-lists/shopping-lists.module').then(
-                  (m) => m.ShoppingListsPageModule
-               ),
-         },
-         {
-            path: 'profile',
-            loadChildren: () =>
-               import('./libs/pages/user-profile/user-profile.module').then(
-                  (m) => m.UserProfilePageModule
-               ),
-         },
-      ],
+      path: 'app',
+      loadChildren: () =>
+         import('./libs/pages/home/home.page.module').then((m) => m.HomePageModule),
    },
    {
       path: 'authenticate',
@@ -39,7 +16,7 @@ const routes: Routes = [
    },
    {
       path: '',
-      redirectTo: 'shopping-list',
+      redirectTo: 'app',
       pathMatch: 'full',
    },
 ];
@@ -47,6 +24,6 @@ const routes: Routes = [
 @NgModule({
    imports: [RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })],
    exports: [RouterModule],
-   providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true }],
+   // providers: [{ provide: HTTP_INTERCEPTORS, useClass: AuthenticationInterceptor, multi: true }],
 })
 export class AppRoutingModule {}

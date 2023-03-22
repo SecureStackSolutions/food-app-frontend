@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 
 @Component({
-   selector: 'nx-ionic-template-root',
+   selector: 'root-app',
    templateUrl: 'app.component.html',
    styleUrls: ['app.component.scss'],
 })

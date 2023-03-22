@@ -1,0 +1,35 @@
+<div id="id">
+    <div id="id-picture-wrapper">
+        <div id="id-picture">
+            <div id="id-new-picture">
+                <ion-icon name="create-outline"></ion-icon>
+            </div>
+        </div>
+    </div>
+    <div id="id-info-wrapper">
+        <div>Lucky Luke</div>
+        <div>Shootsfasterthanhis@gmail.com</div>
+    </div>
+</div>
+<div id="preferences" *ngIf="preferences$ | async as preferences">
+    <header>
+        <ion-icon name="options-outline"></ion-icon> 
+        Preferences
+    </header>
+    <ul>
+        <li>Language {{ preferences.language }}</li>
+        <li>Night mode {{ preferences.theme }}</li>
+    </ul>
+</div>
+<div id="preferences">
+    <header>
+        <ion-icon name="options-outline"></ion-icon> 
+        Preferences
+    </header>
+    <ul>
+        <li>Language</li>
+        <li>Night mode</li>
+        <li>Notifications</li>
+    </ul>
+</div>
+<button (click)="onSignOut()">SIGN OUT</button>

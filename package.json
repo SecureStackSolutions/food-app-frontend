@@ -3,8 +3,8 @@
    "version": "0.0.0",
    "license": "MIT",
    "scripts": {
-      "main-app:start": "docker compose -f apps/main-app/docker-compose.dev.yml up",
-      "main-app:stop": "docker compose -f apps/main-app/docker-compose.dev.yml down",
+      "start:main-app": "docker compose -f apps/main-app/docker-compose.dev.yml up",
+      "stop:main-app": "docker compose -f apps/main-app/docker-compose.dev.yml down",
       "main-app:stag:start": "docker compose -f apps/main-app/docker-compose.stag.yml up",
       "main-app:stag:stop": "docker compose -f apps/main-app/docker-compose.stag.yml down",
       "test": "jest",
