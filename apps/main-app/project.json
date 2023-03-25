@@ -26,7 +26,7 @@
             "styles": [
                "apps/main-app/src/styles.scss",
                {
-                  "input": "apps/main-app/src/theme/variables.scss"
+                  "input": "libs/atlas/src/lib/styles/_index.scss"
                }
             ],
             "scripts": []

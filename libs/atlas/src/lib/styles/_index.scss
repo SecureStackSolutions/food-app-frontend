@@ -1,0 +1,13 @@
+@forward 'base/responsive.scss';
+@forward 'base/typography.scss';
+@forward 'base/spacing.scss';
+@forward 'base/flexbox.scss';
+
+html {
+    font-size: var(--atlas-base-font-size);
+}
+
+body {
+    font-family: var(--atlas-primary-font);
+    line-height: var(--atlas-line-height);
+}

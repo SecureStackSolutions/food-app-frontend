@@ -1,0 +1,76 @@
+@import 'responsive.scss';
+
+
+:root {
+  --atlas-base-font-size: 16px;
+  --atlas-primary-font: 'Roboto', sans-serif;
+  --atlas-secondary-font: 'Merriweather', serif;
+  --atlas-line-height: 1.5;
+  --atlas-max-line-length: 65ch;
+}
+// Mixins
+@mixin font-size($size) {
+  font-size: $size;
+  line-height: var(--atlas-line-height);
+}
+
+// Headings
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--atlas-secondary-font);
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
+  max-width: var(--atlas-max-line-length);
+}
+
+h1 {
+    @include font-size(2rem);
+}
+
+h2 {
+    @include font-size(1.75rem);
+}
+
+h3 {
+    @include font-size(1.50rem);
+}
+
+h4 {
+    @include font-size(1.25rem);
+}
+
+h5 {
+    @include font-size(1rem);
+}
+
+h6, p {
+    @include font-size(.875rem);
+}
+
+p {
+  margin-bottom: 1.5em;
+}
+
+// Links
+a {
+  color: #0066cc;
+  text-decoration: none;
+}
+
+// Responsive typography
+@media screen and (min-width: var(--atlas-medium-screen)) and (max-width: var(--atlas-large-screen)) {
+  h1 { @include font-size(2.25rem); }
+  h2 { @include font-size(1.875rem); }
+  h3 { @include font-size(1.625rem); }
+  h4 { @include font-size(1.375rem); }
+  h5 { @include font-size(1.125rem); }
+  h6, p { @include font-size(0.9375rem); }
+}
+
+@media screen and (min-width: var(--atlas-large-screen)) {
+    h1 { @include font-size(2.25rem); }
+    h2 { @include font-size(2rem); }
+    h3 { @include font-size(1.75rem); }
+    h4 { @include font-size(1.5rem); }
+    h5 { @include font-size(1.25rem); }
+    h6, p { @include font-size(1rem); }
+}
