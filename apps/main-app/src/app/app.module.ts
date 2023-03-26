@@ -12,6 +12,7 @@ import { environment } from '../environments/environment';
 import { AuthenticationStateService } from './libs/authentication/authentication-state.service';
 import { HttpClientModule } from '@angular/common/http';
 import { UserState } from './libs/state-management/user/user.state';
+import { AtlasModule } from '@atlas';
 
 @NgModule({
    declarations: [AppComponent],
@@ -23,6 +24,7 @@ import { UserState } from './libs/state-management/user/user.state';
       IonicModule.forRoot({ mode: 'md' }),
       AngularFireModule.initializeApp(environment.firebase),
       AngularFireAuthModule,
+      AtlasModule,
       AppRoutingModule,
       NgxsModule.forRoot([UserState], {
          developmentMode: isDevMode(),

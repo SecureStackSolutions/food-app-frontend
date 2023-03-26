@@ -18,10 +18,12 @@
 @import '~@ionic/angular/css/typography.css';
 @import '~@ionic/angular/css/display.css';
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 input {
     all: unset;
+}
+
+body {
+    min-width: 320px;
+    max-width: 1920px;
 }

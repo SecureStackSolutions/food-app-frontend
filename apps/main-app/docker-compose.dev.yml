@@ -12,6 +12,8 @@ services:
       build:
          context: ../../
          dockerfile: ./apps/main-app/dockerfiles/Dockerfile.dev
+      env_file:
+         - ../../.env
       ports:
          - 8201:4200
       volumes:

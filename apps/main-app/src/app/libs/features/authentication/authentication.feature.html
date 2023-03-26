@@ -1,15 +1,11 @@
-<div id="welcome-tour">
-    f
+<div id="welcome-tour" class="relative">
+    <div id="heading" class="absolute text-center">
+        <h1 class="h1">GoGrocery</h1>
+        <h2 class="h6">Your personal grocery assistant</h2>
+    </div>
 </div>
-<div id="header">
-    <h1> GoGrocery </h1>
+<div id="container" class="padding-h-7 padding-b-9 flex-col gap-row-6 justify-end">
+    <atlas-button [data]="{ icon: { path: 'assets/logo_google.svg' }, text: 'Sign in with Google'}" (click)="authenticate(AuthProvider.Google)"></atlas-button>
+    <atlas-button [data]="{ icon: { path: 'assets/logo_facebook.svg' }, text: 'Sign in with Facebook'}" (click)="authenticate(AuthProvider.Facebook)"></atlas-button>
+    <atlas-button [data]="{ icon: { path: 'assets/logo_apple.svg' }, text: 'Sign in with Apple'}"></atlas-button>
 </div>
-<div id="login-providers">
-    <!-- <atlas-button [view]="View.Rectangle" [data]="{ icon: 'mail-outline', text: 'Continue with Email'}" (click)="authenticate(AuthProvider.Google)"></atlas-button> -->
-    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-google', text: 'Continue with Google', color: { bgColor: ['#f54233'], textColor: 'white'}}" (click)="authenticate(AuthProvider.Google)"></atlas-button>
-    <!-- <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-apple', text: 'Continue with Apple', color: { bgColor: ['#000000'], textColor: 'white'}}" (click)="authenticate(AuthProvider.Google)"></atlas-button> -->
-    <atlas-button [view]="View.Rectangle" [data]="{ icon: 'logo-facebook', text: 'Continue with Facebook', color: { bgColor: ['#277fb9', '#40a4ea'], textColor: 'white'}}" (click)="authenticate(AuthProvider.Facebook)"></atlas-button>
-</div>
-
-
-

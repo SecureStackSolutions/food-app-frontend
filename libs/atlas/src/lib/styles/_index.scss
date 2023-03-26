@@ -2,12 +2,19 @@
 @forward 'base/typography.scss';
 @forward 'base/spacing.scss';
 @forward 'base/flexbox.scss';
+@forward 'base/grid.scss';
+@forward 'utils/other.scss';
 
 html {
-    font-size: var(--atlas-base-font-size);
+    font-size: var(--base-font-size);
 }
 
 body {
-    font-family: var(--atlas-primary-font);
-    line-height: var(--atlas-line-height);
+    font-family: var(--primary-font);
+    line-height: var(--line-height);
+}
+
+button {
+  background: none;
+  color: black
 }

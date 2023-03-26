@@ -1,11 +1,12 @@
 import { HttpClientModule } from '@angular/common/http';
-import { Component } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Router } from '@angular/router';
+import { IonicModule } from '@ionic/angular';
 import { Store } from '@ngxs/store';
 import { AtlasInputComponent } from '../../shared';
-import { AtlasButtonComponent, View } from '../../shared/atlas/button/button.component';
 import { AuthenticationService, AuthProvider } from './services/authentication.service';
+import { AtlasModule } from '@atlas';
 
 @Component({
    selector: 'feature-authentication',
@@ -14,15 +15,15 @@ import { AuthenticationService, AuthProvider } from './services/authentication.s
    standalone: true,
    imports: [
       AtlasInputComponent,
+      AtlasModule,
+      IonicModule,
       FormsModule,
       ReactiveFormsModule,
-      AtlasButtonComponent,
       HttpClientModule,
    ],
    providers: [AuthenticationService],
 })
 export class AuthenticationFeature {
-   View = View;
    AuthProvider = AuthProvider;
 
    constructor(

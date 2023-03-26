@@ -15,4 +15,4 @@ RUN yarn
 COPY . .
 
 # Application metadata
-CMD npx nx run main-app:serve --host 0.0.0.0
+CMD npx nx run main-app:serve --host 0.0.0.0 

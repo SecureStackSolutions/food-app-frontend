@@ -1,31 +1,30 @@
 
 
 :root {
-    --atlas-space-1: 1px;
-    --atlas-space-2: 2px;
-    --atlas-space-3: calc(var(--atlas-space-1) + var(--atlas-space-2)); 
-    --atlas-space-4: calc(var(--atlas-space-2) + var(--atlas-space-3));
-    --atlas-space-5: calc(var(--atlas-space-3) + var(--atlas-space-4));
-    --atlas-space-6: calc(var(--atlas-space-4) + var(--atlas-space-5));
-    --atlas-space-7: calc(var(--atlas-space-5) + var(--atlas-space-6));
-    --atlas-space-8: calc(var(--atlas-space-6) + var(--atlas-space-7));
-    --atlas-space-9: calc(var(--atlas-space-7) + var(--atlas-space-8));
-    --atlas-space-10: calc(var(--atlas-space-8) + var(--atlas-space-9));
-}
+    --space-1: 1px;
+    --space-2: 2px;
+    --space-3: calc(var(--space-1) + var(--space-2)); 
+    --space-4: calc(var(--space-2) + var(--space-3));
+    --space-5: calc(var(--space-3) + var(--space-4));
+    --space-6: calc(var(--space-4) + var(--space-5));
+    --space-7: calc(var(--space-5) + var(--space-6));
+    --space-8: calc(var(--space-6) + var(--space-7));
+    --space-9: calc(var(--space-7) + var(--space-8));
+    --space-10: calc(var(--space-8) + var(--space-9));
 
 
 $-spaces: 
 (
-    "1": var(--atlas-space-1),
-    "2": var(--atlas-space-2),
-    "3": var(--atlas-space-3),
-    "4": var(--atlas-space-4),
-    "5": var(--atlas-space-5),
-    "6": var(--atlas-space-6),
-    "7": var(--atlas-space-7),
-    "8": var(--atlas-space-8),
-    "9": var(--atlas-space-9),
-    "10": var(--atlas-space-10),
+    1: var(--space-1),
+    2: var(--space-2),
+    3: var(--space-3),
+    4: var(--space-4),
+    5: var(--space-5),
+    6: var(--space-6),
+    7: var(--space-7),
+    8: var(--space-8),
+    9: var(--space-9),
+    10: var(--space-10),
 );
 
 $-directions: (
@@ -39,36 +38,45 @@ $-directions: (
 @each $space-name, $space in $-spaces {
     
     @each $direction, $abbr in $-directions {
-        .atlas-margin-#{$abbr}-#{$space-name} {
+        .margin-#{$abbr}-#{$space-name} {
             margin-#{$direction}: $space;
+        };
+
+        .padding-#{$abbr}-#{$space-name} {
+            padding-#{$direction}: $space;
         };
     }
 
-    .atlas-gap-#{$space-name} {
+    .gap-#{$space-name} {
         gap: $space;
     }
-    .atlas-gap-col-#{$space-name} {
+    .gap-col-#{$space-name} {
         column-gap: $space;
     }
-    .atlas-gap-row-#{$space-name} {
+    .gap-row-#{$space-name} {
         row-gap: $space;
     }
 
-    .atlas-margin-v-#{$space-name} {
-        margin: 0 $space;
+    .margin-v-#{$space-name} {
+        padding-top: $space;
+        padding-bottom: $space;
     }
 
-    .atlas-margin-h-#{$space-name} {
-        margin: $space 0;
+    .margin-h-#{$space-name} {
+        padding-left: $space;
+        padding-right: $space;
     }
 
-    .atlas-padding-v-#{$space-name} {
-        padding: 0 $space;
+    .padding-v-#{$space-name} {
+        padding-top: $space;
+        padding-bottom: $space;
     }
 
-    .atlas-padding-h-#{$space-name} {
-        padding: $space 0;
+    .padding-h-#{$space-name} {
+        padding-left: $space;
+        padding-right: $space;
     }
 }
 
+}
 

@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { AtlasButtonComponent } from './components/button/button.component';
 
 @NgModule({
-   imports: [CommonModule],
+   imports: [AtlasButtonComponent],
+   exports: [AtlasButtonComponent],
 })
 export class AtlasModule {}

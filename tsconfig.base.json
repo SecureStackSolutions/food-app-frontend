@@ -15,7 +15,7 @@
       "skipDefaultLibCheck": true,
       "baseUrl": ".",
       "paths": {
-         "@nx-ionic-template/atlas": ["libs/atlas/src/index.ts"]
+         "@atlas": ["libs/atlas/src/index.ts"]
       }
    },
    "exclude": ["node_modules", "tmp"]

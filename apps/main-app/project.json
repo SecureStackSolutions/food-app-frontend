@@ -6,9 +6,12 @@
    "prefix": "nx-ionic-template",
    "targets": {
       "build": {
-         "executor": "@angular-devkit/build-angular:browser",
+         "executor": "@nrwl/angular:webpack-browser",
          "outputs": ["{options.outputPath}"],
          "options": {
+            "customWebpackConfig": {
+               "path": "apps/main-app/webpack.config.js"
+            },
             "outputPath": "dist/apps/main-app",
             "index": "apps/main-app/src/index.html",
             "main": "apps/main-app/src/main.ts",
@@ -59,7 +62,7 @@
          "defaultConfiguration": "production"
       },
       "serve": {
-         "executor": "@angular-devkit/build-angular:dev-server",
+         "executor": "@nrwl/angular:webpack-dev-server",
          "configurations": {
             "production": {
                "browserTarget": "main-app:build:production"
