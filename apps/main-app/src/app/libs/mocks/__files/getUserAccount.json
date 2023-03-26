@@ -8,8 +8,8 @@
         "language": {
             "code": "en",
             "name": "English",
-            "icon": "flag"
+            "icon": "assets/flag_en.svg"
         },
-        "theme": null
+        "theme": "light"
     }
 }
