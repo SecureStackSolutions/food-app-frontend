@@ -5,7 +5,11 @@
         "picture": "<picture url>"
     },
     "preferences": {
-        "language": "en",
-        "theme": "light"
+        "language": {
+            "code": "en",
+            "name": "English",
+            "icon": "flag"
+        },
+        "theme": null
     }
 }

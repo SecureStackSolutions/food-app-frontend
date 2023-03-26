@@ -6,7 +6,7 @@ import { AuthenticationPage } from './authentication.page';
 const routes: Routes = [
    {
       path: '',
-      // canActivate: [AuthPageGuard],
+      canActivate: [AuthPageGuard],
       component: AuthenticationPage,
    },
 ];

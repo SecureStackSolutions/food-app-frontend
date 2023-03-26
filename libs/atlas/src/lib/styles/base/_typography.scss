@@ -18,11 +18,16 @@
 .text-center {
   text-align: center;
 }
+
+.text-start {
+  text-align: start;
+}
+
 // Headings
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--secondary-font);
 
-  font-weight: 600;
+  font-weight: normal;
   margin: 0;
   padding: 0;
 }
@@ -47,12 +52,16 @@ p {
     @include font-size(1.25rem);
 }
 
-.h5 {
+.h5, .text {
     @include font-size(1rem);
 }
 
-.h6, .text {
+.h6 {
     @include font-size(.875rem);
+}
+
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  font-weight: 600;
 }
 
 // Links

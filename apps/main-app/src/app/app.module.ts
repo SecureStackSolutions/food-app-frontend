@@ -11,8 +11,8 @@ import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from '../environments/environment';
 import { AuthenticationStateService } from './libs/authentication/authentication-state.service';
 import { HttpClientModule } from '@angular/common/http';
-import { UserState } from './libs/state-management/user/user.state';
 import { AtlasModule } from '@atlas';
+import { stateRegister } from './libs/state-management';
 
 @NgModule({
    declarations: [AppComponent],
@@ -26,7 +26,7 @@ import { AtlasModule } from '@atlas';
       AngularFireAuthModule,
       AtlasModule,
       AppRoutingModule,
-      NgxsModule.forRoot([UserState], {
+      NgxsModule.forRoot(stateRegister, {
          developmentMode: isDevMode(),
       }),
    ],

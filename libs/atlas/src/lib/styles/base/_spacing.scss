@@ -36,6 +36,14 @@ $-directions: (
 
 
 @each $space-name, $space in $-spaces {
+
+    .margin-#{$space-name} {
+        margin: $space;
+    }
+
+    .padding-#{$space-name} {
+        padding: $space;
+    }
     
     @each $direction, $abbr in $-directions {
         .margin-#{$abbr}-#{$space-name} {

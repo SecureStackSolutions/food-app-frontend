@@ -8,14 +8,14 @@ import {
    UrlTree,
 } from '@angular/router';
 import { Select } from '@ngxs/store';
-import { map, Observable } from 'rxjs';
-import { UserState } from '../state-management/user/user.state';
+import { map, Observable, tap } from 'rxjs';
+import { AuthState } from '../state-management/auth/auth.state';
 
 type CanActivate = () => Observable<boolean | UrlTree>;
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationGuardService {
-   @Select(UserState.isAuthenticated) isAuthenticated$: Observable<boolean>;
+   @Select(AuthState.isAuthenticated) isAuthenticated$!: Observable<boolean>;
 
    constructor(private readonly router: Router) {}
 

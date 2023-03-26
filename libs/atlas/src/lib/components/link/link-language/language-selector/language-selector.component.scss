@@ -1,0 +1,15 @@
+
+#chevron {
+    height: 12px;
+}
+
+#language-selector {
+    -webkit-overflow-scrolling: touch;
+    z-index: 4;
+    left: 0;
+    right: 0;
+    top: 100%;
+    overflow-y: auto;
+    background-color: white;
+    border-top: 1px solid rgba(128, 128, 128, 0.232)
+}

@@ -1,4 +1,10 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngxs/store';
+import {
+   convertNavigotorLanguageToAppLanguage,
+   convertWindowThemeToAppTheme,
+} from './libs/shared/functions';
+import { SetAppLanguage, SetAppTheme } from './libs/state-management';
 
 @Component({
    selector: 'root-app',
@@ -6,5 +12,10 @@ import { Component } from '@angular/core';
    styleUrls: ['app.component.scss'],
 })
 export class AppComponent {
-   constructor() {}
+   constructor(private readonly store: Store) {
+      this.store.dispatch([
+         new SetAppLanguage(convertNavigotorLanguageToAppLanguage(navigator.language)),
+         new SetAppTheme(convertWindowThemeToAppTheme()),
+      ]);
+   }
 }

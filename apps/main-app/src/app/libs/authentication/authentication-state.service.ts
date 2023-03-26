@@ -1,21 +1,14 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
-import { Actions, ofActionSuccessful, Select, Store } from '@ngxs/store';
-import { concatMap, firstValueFrom, Observable, tap } from 'rxjs';
-
-import {
-   UpdateUserSession,
-   UserSessionChanged,
-   UserState,
-} from '../state-management/user/user.state';
+import { Actions, ofActionSuccessful, Store } from '@ngxs/store';
+import { firstValueFrom, tap } from 'rxjs';
+import { AuthenticationChanged, OnAuthenticationChange } from '../state-management/auth/auth.state';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationStateService {
-   @Select(UserState.isAuthenticated) isAuthenticated$: Observable<boolean>;
-
-   onAuthStateChangedSub;
-   onSessionChanged$ = this.actions$.pipe(ofActionSuccessful(UserSessionChanged));
+   // onAuthStateChangedSub;
+   onAuthStateChanged$ = this.actions$.pipe(ofActionSuccessful(AuthenticationChanged));
 
    constructor(
       private readonly auth: AngularFireAuth,
@@ -23,16 +16,17 @@ export class AuthenticationStateService {
       private readonly router: Router,
       private readonly actions$: Actions
    ) {
-      this.onAuthStateChangedSub = this.auth.onAuthStateChanged(this.updateUserSession);
-      this.setOnSessionChanged().subscribe();
+      // this.onAuthStateChangedSub =
+      this.onSessionChangeListener$().subscribe();
+      this.auth.onAuthStateChanged((session) =>
+         this.store.dispatch(new OnAuthenticationChange(session))
+      );
    }
 
-   init = async () => firstValueFrom(this.onSessionChanged$);
-   updateUserSession = (session: any) => this.store.dispatch(new UpdateUserSession(session));
+   init = async () => firstValueFrom(this.onAuthStateChanged$);
 
-   setOnSessionChanged = () =>
-      this.onSessionChanged$.pipe(
-         concatMap(() => this.isAuthenticated$),
+   onSessionChangeListener$ = () =>
+      this.onAuthStateChanged$.pipe(
          tap((isAuthenticated) =>
             this.router.navigate([isAuthenticated ? '/app' : '/authenticate'])
          )

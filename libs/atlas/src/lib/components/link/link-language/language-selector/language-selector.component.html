@@ -1,0 +1,14 @@
+<section class="pointer flex-row gap-col-6 align-items-center relative padding-4" (click)="onChangeLanguage()">
+    <img id="chevron" src="assets/flag_{{ languageCode }}.svg" alt="">
+    <h3 class="h6 flex-grow text-start"> {{ language }}</h3>
+    <section id="language-selector" *ngIf="viewLanguages" class="absolute flex-col padding-v-3">
+        <section 
+        *ngFor="let language of selectableLanguages" 
+        class="padding-4 pointer flex-row gap-col-6 align-items-center"
+        (click)="languageSelected.emit(language.code)"
+        >
+            <img id="chevron" src="assets/flag_{{ language.code }}.svg" alt="">
+            <h3 class="h6 flex-grow text-start"> {{ language.name }}</h3>
+        </section>
+    </section>
+</section>

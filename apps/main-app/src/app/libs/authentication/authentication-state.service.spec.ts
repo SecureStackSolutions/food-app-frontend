@@ -1,8 +1,6 @@
 import { createServiceFactory, mockProvider, SpectatorService } from '@ngneat/spectator';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Store } from '@ngxs/store';
-import { firstValueFrom, of } from 'rxjs';
-import { SetUserSession } from './authentication.state';
 import { AuthenticationStateService } from './authentication-state.service';
 
 describe('AuthenticationStateService', () => {

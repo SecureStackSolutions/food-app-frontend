@@ -17,7 +17,7 @@
                "error",
                {
                   "type": "element",
-                  "prefix": "nx-ionic-template",
+                  "prefix": "atlas",
                   "style": "kebab-case"
                }
             ]
