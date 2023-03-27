@@ -1,5 +1,9 @@
-<ion-header>
+<ion-header class="ion-no-border">
     <ion-toolbar>
-        hello
+        <div class="flex-row justify-center align-items-center">
+            <h1 *ngIf="titleCollapsed" class="h6">
+                {{ titleCollapsed }}
+            </h1>
+        </div>
     </ion-toolbar>
 </ion-header>

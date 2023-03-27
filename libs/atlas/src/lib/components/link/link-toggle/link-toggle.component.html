@@ -1,4 +1,4 @@
-<button *ngIf="data" class="width-full padding-h-6 flex-row align-items-center gap-col-6">
+<button *ngIf="data" class="width-full flex-row align-items-center gap-col-6">
     <img *ngIf="data.iconStart as icon" id="icon" [src]="icon.path" alt="">
     <h3 class="text flex-grow text-start">{{ data.text }}</h3>
     <ion-toggle color="dark" [checked]="true"></ion-toggle>

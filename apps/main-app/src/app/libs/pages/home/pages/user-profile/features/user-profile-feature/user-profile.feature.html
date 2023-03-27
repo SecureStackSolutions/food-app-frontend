@@ -1,11 +1,23 @@
-<section>
-
-
+<section id="profile" class="flex-row gap-col-7 margin-b-8">
+    <div id="picture">
+        <div id="updatePicture"></div>
+    </div>
+    <div id="info" class="flex-col gap-row-6 justify-end">
+        <div class="flex-col gap-row-3 justify-center">
+            <h2 class="h5">Lucas Banana</h2>
+            <h3 class="p2">LucasBanana@wakanda.com</h3>
+        </div>
+        <button id="edit-profile-button" class="padding-v-5 padding-h-7">Edit profile</button>
+    </div>
 </section>
-<section>
-    <section>
+<section class="flex-col gap-row-5">
+    <section class="flex-col gap-row-4">
         <atlas-link-language [languageCode]="LanguageCode.en"></atlas-link-language>
         <atlas-link-toggle [data]="{ iconStart: { path: 'assets/theme_light_dark.svg', size: 14}, text: 'Theme' }"></atlas-link-toggle>
     </section>
-    <section></section>
+    <div id="break"></div>
+    <section class="flex-col gap-row-4">
+        <atlas-link-chevron [data]="{ iconStart: { path: 'assets/theme_light_dark.svg', size: 14}, text: 'Remove all lists' }"></atlas-link-chevron>
+        <atlas-link-chevron [data]="{ iconStart: { path: 'assets/log_out.svg', size: 14}, text: 'Log out' }" (click)="onSignOut()"></atlas-link-chevron>
+    </section>
 </section>

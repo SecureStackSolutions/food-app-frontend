@@ -1,0 +1,29 @@
+#picture {
+    border-radius: 100%;
+    background-color: red;
+    height: 120px;
+    aspect-ratio: 1;
+    position: relative;
+}
+
+
+#updatePicture {
+    position: absolute;
+    right: 3%;
+    bottom: 3%;
+    border-radius: 100%;
+    background-color: blue;
+    width: 23%;
+    height: 23%;
+}
+#edit-profile-button {
+    background-color: green;
+}
+
+:host {
+    display: block;
+}
+
+#break {
+    border-bottom: 1px solid rgba(128, 128, 128, 0.18);
+}
