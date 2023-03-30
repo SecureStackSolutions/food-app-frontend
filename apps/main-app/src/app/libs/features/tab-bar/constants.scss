@@ -1,0 +1,6 @@
+@use "sass:math";
+
+$tab-bar-height: 55px;
+$golden-ratio: 1.61803398875;
+$tab-bar-width-landscape: calc($tab-bar-height * $golden-ratio);
+$border-radius-ratio: math.pow($golden-ratio, 2);

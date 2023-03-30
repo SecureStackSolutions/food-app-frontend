@@ -13,6 +13,7 @@ import { AuthenticationStateService } from './libs/authentication/authentication
 import { HttpClientModule } from '@angular/common/http';
 import { AtlasModule } from '@atlas';
 import { stateRegister } from './libs/state-management';
+import { InlineSVGModule } from 'ng-inline-svg';
 
 @NgModule({
    declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { stateRegister } from './libs/state-management';
       // core
       BrowserModule,
       HttpClientModule,
+      InlineSVGModule.forRoot(),
       IonicModule.forRoot({ mode: 'md' }),
       AngularFireModule.initializeApp(environment.firebase),
       AngularFireAuthModule,

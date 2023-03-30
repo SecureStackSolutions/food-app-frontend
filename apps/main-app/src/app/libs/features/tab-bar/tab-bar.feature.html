@@ -1,0 +1,10 @@
+<ion-tabs (ionTabsDidChange)="tabsChanged($event)">
+    <section id="tab-bar-wrapper">
+        <div class="absolute" id="shadow"></div>
+        <ion-tab-bar>
+            <component-tab-bar-button [isSelected]="selectedTabName === 'shopping-list'" tabName="shopping-list"></component-tab-bar-button>
+            <component-tab-bar-button [isSelected]="selectedTabName === 'product-search'" tabName="product-search"></component-tab-bar-button>
+            <component-tab-bar-button [isSelected]="selectedTabName === 'profile'" tabName="profile"></component-tab-bar-button>
+        </ion-tab-bar>
+    </section>
+</ion-tabs>

@@ -17,7 +17,7 @@
                "error",
                {
                   "type": "element",
-                  "prefix": ["feature", "page", "atlas"],
+                  "prefix": ["feature", "component", "page", "atlas"],
                   "style": "kebab-case"
                }
             ],

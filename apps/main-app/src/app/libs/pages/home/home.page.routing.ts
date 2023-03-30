@@ -24,6 +24,13 @@ const routes: Routes = [
                ),
          },
          {
+            path: 'product-search',
+            loadChildren: () =>
+               import('./pages/product-search/product-search.module').then(
+                  (m) => m.ProductSearchPageModule
+               ),
+         },
+         {
             path: 'profile',
             loadChildren: () =>
                import('./pages/user-profile/user-profile.module').then(

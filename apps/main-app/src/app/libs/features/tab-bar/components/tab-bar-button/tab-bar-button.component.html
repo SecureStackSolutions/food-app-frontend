@@ -1,0 +1,6 @@
+<ion-tab-button [tab]="tabName">
+    <div id="button-inner" class="flex-row align-items-center justify-center padding-v-4" [ngClass]="{ 'is-selected': isSelected }">
+        <img *ngIf="isSelected" class="height-full" src="assets/tab-bar-icons/{{tabName}}-black.svg" alt="">
+        <img *ngIf="!isSelected" class="height-full" src="assets/tab-bar-icons/{{tabName}}-white.svg" alt="">
+    </div>
+</ion-tab-button>

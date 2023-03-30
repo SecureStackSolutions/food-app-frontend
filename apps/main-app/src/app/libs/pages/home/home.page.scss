@@ -1,3 +1,44 @@
+
+
+// #tab-bar-wrapper {
+// 	padding: 10px 0 10px 10px;
+// 	background-color: transparent;
+// }
+
+$tab-bar-height: 55px;
+$golden-ratio: 1.61803398875;
+$border-radius-ratio: 3;
+
+#tab-bar-wrapper {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	background-color: transparent;
+	padding: 0 18px;
+	padding-bottom: 18px;
+	overflow: visible;
+}
+
+ion-tab-bar, ion-tab-button {
+	--background: black;
+}
+
+ion-tab-bar {
+	height: $tab-bar-height;
+	border-radius: $tab-bar-height / $border-radius-ratio;
+	--background: black;
+}
+
+.is-selected {
+	background-color: white;
+}
+
+#button-inner {
+	height: $tab-bar-height / $golden-ratio;
+	border-radius: $tab-bar-height / $golden-ratio / $border-radius-ratio;
+	width: 66px;
+}
+
 @media screen and (min-aspect-ratio: 6/5) {
 
 	ion-tabs { 
@@ -12,10 +53,6 @@
         align-items: center;
         justify-content: start;
         gap: 0;
-    }
-
-    ion-tab-button {
-        max-height: 56px;
     }
 
 	// ion-tab-bar { 
@@ -43,4 +80,13 @@
 	// 		top: 33%; 
 	// 	} 
 	// }
+}
+
+#shadow {
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 0%;
+	// background-image: linear-gradient(to top, white, white 50%, rgba(255, 255, 255, 0.283));
+	box-shadow: rgb(255, 255, 255) 0px -10px 70px 90px;
 }

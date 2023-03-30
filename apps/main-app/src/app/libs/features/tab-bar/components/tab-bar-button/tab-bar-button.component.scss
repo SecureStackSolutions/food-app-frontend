@@ -1,0 +1,28 @@
+
+@import "../../constants.scss";
+
+$tabButtonHeight: calc($tab-bar-height / $golden-ratio);
+
+:host {
+    display: contents;
+}
+
+.is-selected {
+	background-color: white;
+}
+
+#button-inner {
+	height: $tabButtonHeight;
+	border-radius: calc($tabButtonHeight / $border-radius-ratio);
+	aspect-ratio: $golden-ratio;
+}
+
+ion-tab-button {
+	--background: black;
+    // Remove splash/ripple effect for Android devices
+    --ripple-color: transparent;
+  
+    // Remove splash/ripple effect for iOS devices
+    --background-activated: initial;
+    --background-hover: initial;
+}
