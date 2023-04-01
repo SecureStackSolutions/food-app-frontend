@@ -2,16 +2,15 @@ import { Injectable } from '@angular/core';
 import { ScrollDetail } from '@ionic/angular';
 import { Observable, ReplaySubject } from 'rxjs';
 
-type IonScrollEvent = CustomEvent<ScrollDetail>;
+export type ScrollEvent = CustomEvent<ScrollDetail>;
 
 @Injectable()
 export class ScrollEventService {
-   private readonly _scrollEvent$: ReplaySubject<IonScrollEvent> =
-      new ReplaySubject<IonScrollEvent>();
-   private readonly scrollEvent$: Observable<IonScrollEvent> = this._scrollEvent$.asObservable();
+   private readonly _scrollEvent$: ReplaySubject<ScrollEvent> = new ReplaySubject<ScrollEvent>();
+   private readonly scrollEvent$: Observable<ScrollEvent> = this._scrollEvent$.asObservable();
 
-   sendScrollEvent(scrollEvent: IonScrollEvent): void {
+   sendScrollEvent(scrollEvent: ScrollEvent): void {
       this._scrollEvent$.next(scrollEvent);
    }
-   getScrollEvent$ = (): Observable<IonScrollEvent> => this.scrollEvent$;
+   getScrollEvent$ = (): Observable<ScrollEvent> => this.scrollEvent$;
 }

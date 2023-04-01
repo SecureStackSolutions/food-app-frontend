@@ -28,7 +28,7 @@ export class AuthenticationStateService {
    onSessionChangeListener$ = () =>
       this.onAuthStateChanged$.pipe(
          tap((isAuthenticated) =>
-            this.router.navigate([isAuthenticated ? '/app' : '/authenticate'])
+            !isAuthenticated ? this.router.navigate(['/authenticate']) : null
          )
       );
 }

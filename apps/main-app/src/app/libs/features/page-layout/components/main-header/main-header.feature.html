@@ -1,11 +1,14 @@
 <ion-header class="ion-no-border">
     <ion-toolbar>
     </ion-toolbar>
-    <div id="toolbar" class="relative ">
+    <div id="toolbar" class="relative" #toolbar>
+        <img 
+            id="background-image"
+            class="absolute width-full"
+            src="https://media.istockphoto.com/id/1352758440/photo/paper-shopping-food-bag-with-grocery-and-vegetables.jpg?b=1&s=170667a&w=0&k=20&c=iKgsDK_4spbF8uECRQcmeebr1RSh2SnHDPM3FS2aaco=" alt="">
+        <div id="img-shadow" class="absolute"></div>
         <div id="toolbar-collapsed" class="absolute flex-row justify-center align-items-center">
-           <h1 class="h6">  {{ titleCollapsed }} </h1>
+           <h1 class="h6" style="color: black;">  {{ titleCollapsed }} </h1>
         </div>
-
-        <div id="toolbar-expanded" class="absolute"> </div>
     </div>
 </ion-header>
