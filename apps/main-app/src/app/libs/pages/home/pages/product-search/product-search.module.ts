@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
 import { AtlasModule } from '@atlas';
 import { IonicModule } from '@ionic/angular';
-import { MainHeaderFeatureModule } from '../../../../features/main-header/main-header.module';
+import { PageLayoutFeatureModule } from '../../../../features/page-layout/page-layout.feature.module';
 import { ProductSearchPage } from './product-search.page';
 import { ProductSearchPageRoutingModule } from './product-search.routing';
 
@@ -11,7 +11,7 @@ import { ProductSearchPageRoutingModule } from './product-search.routing';
       CommonModule,
       IonicModule,
       ProductSearchPageRoutingModule,
-      MainHeaderFeatureModule,
+      PageLayoutFeatureModule,
       AtlasModule,
    ],
    declarations: [ProductSearchPage],

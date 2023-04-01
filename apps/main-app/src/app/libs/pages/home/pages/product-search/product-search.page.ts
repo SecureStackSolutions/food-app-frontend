@@ -5,4 +5,8 @@ import { Component } from '@angular/core';
    templateUrl: 'product-search.page.html',
    styleUrls: ['product-search.page.scss'],
 })
-export class ProductSearchPage {}
+export class ProductSearchPage {
+   onScroll(v: any) {
+      console.log(v);
+   }
+}

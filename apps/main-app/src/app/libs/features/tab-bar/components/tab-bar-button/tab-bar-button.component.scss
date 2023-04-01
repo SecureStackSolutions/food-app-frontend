@@ -12,9 +12,15 @@ $tabButtonHeight: calc($tab-bar-height / $golden-ratio);
 }
 
 #button-inner {
+    // cursor: pointer;
 	height: $tabButtonHeight;
 	border-radius: calc($tabButtonHeight / $border-radius-ratio);
 	aspect-ratio: $golden-ratio;
+    pointer-events: auto;
+
+    &:hover {
+        cursor: pointer;
+    }
 }
 
 ion-tab-button {
@@ -25,4 +31,8 @@ ion-tab-button {
     // Remove splash/ripple effect for iOS devices
     --background-activated: initial;
     --background-hover: initial;
+
+    // &::part(native) {
+    //     cursor: default;
+    // }
 }
