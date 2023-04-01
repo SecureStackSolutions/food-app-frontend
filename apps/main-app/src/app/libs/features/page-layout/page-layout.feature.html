@@ -1,7 +1,5 @@
 
-<feature-main-header titleCollapsed="Search"></feature-main-header>
-<ion-content scrollListener>
-    <section class="padding-6">
-        <ng-content></ng-content>
-    </section>
+<feature-main-header [title]="title" [allowExpanding]="allowExpanding" [background]="background"></feature-main-header>
+<ion-content [scrollListener]="allowExpanding">
+    <ng-content></ng-content>
 </ion-content>

@@ -11,18 +11,22 @@ ion-toolbar {
 }
 
 #toolbar {
-  background-color: red;
+  background-color: white;
   height: 156px;
-  transition: height 300ms;
 }
 
 #background-image {
   bottom: 0;
+  z-index: 2;
+}
+
+#background-color {
+  z-index: 1;
 }
 
 #toolbar-collapsed {
   left: 0;
-  right: 0;
+  width: 100%;
   top: 0;
   height: 56px;
 }
@@ -33,4 +37,17 @@ ion-toolbar {
   left: 0;
   bottom: 0;
   background-color: rgba(255, 255, 255, 0.21);
+}
+
+#toolbar-expanded {
+  bottom: 0;
+  width: 100%;
+  z-index: 3;
+}
+
+#collapsed-title {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 3;
 }

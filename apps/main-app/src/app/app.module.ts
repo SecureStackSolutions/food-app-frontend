@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AtlasModule } from '@atlas';
 import { stateRegister } from './libs/state-management';
 import { InlineSVGModule } from 'ng-inline-svg';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
    declarations: [AppComponent],
@@ -21,6 +22,7 @@ import { InlineSVGModule } from 'ng-inline-svg';
    imports: [
       // core
       BrowserModule,
+      BrowserAnimationsModule,
       HttpClientModule,
       InlineSVGModule.forRoot(),
       IonicModule.forRoot({ mode: 'md' }),

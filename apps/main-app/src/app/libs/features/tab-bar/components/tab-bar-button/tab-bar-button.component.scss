@@ -24,7 +24,7 @@ $tabButtonHeight: calc($tab-bar-height / $golden-ratio);
 }
 
 ion-tab-button {
-	--background: black;
+	--background: var(--color-1);
     // Remove splash/ripple effect for Android devices
     --ripple-color: transparent;
   

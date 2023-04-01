@@ -1,59 +1,44 @@
-import {
-   Component,
-   ElementRef,
-   Input,
-   OnDestroy,
-   OnInit,
-   Renderer2,
-   ViewChild,
-} from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component, Input, OnDestroy, OnInit } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { ScrollEvent, ScrollEventService } from '../../services/scroll-event.service';
+import { collapseAnim, fadeOutAnim } from './animations';
+
+export const toolbarHeightCollapsed = 56;
+export const toolbarHeightExpanded = 156;
 
 @Component({
    selector: 'feature-main-header',
    templateUrl: 'main-header.feature.html',
    styleUrls: ['main-header.feature.scss'],
+   animations: [collapseAnim, fadeOutAnim],
 })
 export class MainHeaderFeature implements OnDestroy, OnInit {
-   @ViewChild('toolbar', { static: true }) toolbarExpanded!: ElementRef;
-
-   @Input() titleCollapsed!: string;
-   scrollEventSub!: Subscription;
-   lastAnimationFrame?: number;
-   isScrolled = false;
-
-   constructor(
-      private readonly scrollEventService: ScrollEventService,
-      private renderer: Renderer2
-   ) {}
-
-   ngOnInit(): void {
-      this.scrollEventSub = this.scrollEventService
-         .getScrollEvent$()
-         .subscribe(this.updateDom(this.toolbarExpanded.nativeElement));
+   _backgroundColor?: string;
+   _backgroundImage?: string;
+   @Input()
+   title!: string;
+   @Input() allowExpanding = true;
+   @Input() set background(values: { image?: string; color?: string }) {
+      this._backgroundColor = values?.color;
+      this._backgroundImage = values?.image;
    }
 
-   updateDom = (element: HTMLElement) => {
-      return ({ detail }: ScrollEvent) => {
-         const isScrolled = detail.scrollTop > 0;
+   scrollEventSub!: Subscription;
+   isCollapsed?: boolean;
 
-         if (isScrolled !== this.isScrolled) {
-            if (this.lastAnimationFrame) {
-               cancelAnimationFrame(this.lastAnimationFrame);
-            }
-            this.lastAnimationFrame = requestAnimationFrame(() => {
-               this.renderer.setStyle(element, 'height', isScrolled ? '56px' : '156px');
-            });
-            this.isScrolled = isScrolled;
-         }
-      };
+   constructor(private readonly scrollEventService: ScrollEventService) {}
+
+   ngOnInit(): void {
+      this.scrollEventSub = this.scrollEventService.getScrollEvent$().subscribe(this.onScrollEvent);
+   }
+   onScrollEvent = ({ detail }: ScrollEvent) => {
+      const isScrolled = detail.scrollTop > 0;
+      if (isScrolled !== this.isCollapsed) {
+         this.isCollapsed = isScrolled;
+      }
    };
 
    ngOnDestroy(): void {
       this.scrollEventSub?.unsubscribe();
-      if (this.lastAnimationFrame) {
-         cancelAnimationFrame(this.lastAnimationFrame);
-      }
    }
 }

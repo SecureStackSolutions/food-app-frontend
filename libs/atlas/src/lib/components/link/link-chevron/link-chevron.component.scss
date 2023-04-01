@@ -7,5 +7,18 @@ button {
     height: 20px;
 }
 #chevron {
-    height: 12px;
+    height: 13px;
+}
+
+:host {
+    cursor: pointer;
+    @media (hover: hover) and (pointer: fine) {
+        &:hover { 
+            background-color: rgba(0, 0, 0, 0.02);
+        }
+      }
+
+    &:active {
+        background-color: rgba(0, 0, 0, 0.06);
+    }
 }

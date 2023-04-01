@@ -1,12 +1,13 @@
 @import "./constants.scss";
 
+
 :host {
 	height: 100%;
 	width: 100%;
 }
 
 ion-tab-bar {
-	--background: black;
+	--background:  var(--color-1);
 }
 
 @media screen and (max-aspect-ratio: 6/5) {
@@ -20,6 +21,7 @@ ion-tab-bar {
 		bottom: 0;
 		width: 100%;
 		background-color: transparent;
+		padding: 0 var(--space-7);
 		padding-bottom: 18px;
 		overflow: visible;
 	}
@@ -36,10 +38,6 @@ ion-tab-bar {
 @media screen and (min-aspect-ratio: 6/5) {
 	ion-tabs { 
 		flex-direction: row-reverse; 
-	}
-
-	#tab-bar-wrapper {
-		left: 0;
 	}
 
     ion-tab-bar {

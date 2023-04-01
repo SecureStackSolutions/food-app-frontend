@@ -1,14 +1,24 @@
-<ion-header class="ion-no-border">
+<ion-header class="ion-no-border" [@.disabled]="!allowExpanding">
     <ion-toolbar>
     </ion-toolbar>
-    <div id="toolbar" class="relative" #toolbar>
+    <div id="toolbar" class="relative" [@collapseAnim]="!allowExpanding || isCollapsed" >
+        <!-- Toolbar background -->
+        <div id="background-color" *ngIf="_backgroundColor" class="absolute width-full height-full" [style.background-color]="_backgroundColor" ></div>
         <img 
+            *ngIf="_backgroundImage"
             id="background-image"
             class="absolute width-full"
-            src="https://media.istockphoto.com/id/1352758440/photo/paper-shopping-food-bag-with-grocery-and-vegetables.jpg?b=1&s=170667a&w=0&k=20&c=iKgsDK_4spbF8uECRQcmeebr1RSh2SnHDPM3FS2aaco=" alt="">
+            [src]="_backgroundImage" alt="">
         <div id="img-shadow" class="absolute"></div>
-        <div id="toolbar-collapsed" class="absolute flex-row justify-center align-items-center">
-           <h1 class="h6" style="color: black;">  {{ titleCollapsed }} </h1>
+        
+        <!-- Toolbar collapsed -->
+        <div id="toolbar-collapsed" class="absolute padding-h-6 flex-row justify-between align-items-center">
+           <h1 id="collapsed-title" class="h5 absolute" style="color: black;" [@fadeOutAnim]="allowExpanding && !isCollapsed">  {{ title }} </h1>
+        </div>
+
+        <!-- Toolbar expanded -->
+        <div *ngIf="allowExpanding" id="toolbar-expanded" class="absolute padding-h-6 padding-b-6" [@fadeOutAnim]="isCollapsed" >
+            <h1 class="h2" style="color: black;">  {{ title }} </h1>
         </div>
     </div>
 </ion-header>
